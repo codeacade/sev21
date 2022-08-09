@@ -27,10 +27,10 @@ app.get("/", (req, res) => {
 			<link rel="stylesheet" href="./style.css">
 		</head>
 		<body>
-			<div class="container mt-5 bg-info">
-				<h3>This page was open ${ i++ } times.</hh3>
+			<div class="container mt-3 p-5 bg-primary text-white text-center">
+				<h1>This page was open ${ i++ } times.</h1>
 				<h4>Up-time is ${ timeMin } minutes.</h4>
-				<p>String data:<br/> ${ dataString }</p>
+				<p class="bg-info mt-3 p-3 ">String data:<br/> ${ dataString }</p>
 				<a href="reset"> RESET UP-TIME </a>
 			</div>
 		  </body>
