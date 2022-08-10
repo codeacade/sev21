@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 		<body>
 			<div class="container mt-3 p-5 bg-primary text-white text-center">
 				<h1>This page was open ${ i } times.</h1>
-				<h4>Up-time is ${ timeMin } minutes.</h4>
+				<h4>Up-time is ${ timeMin } seconds.</h4>
 				<p class="bg-info mt-3 p-3 ">String data:<br/> ${ dataString }</p>
 				<a href="reset"> RESET UP-TIME...... </a>
 			</div>
