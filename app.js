@@ -11,7 +11,7 @@ app.get("/", (req, res) => {
 	fs.readFile('./mydata.txt', (err, data) => {
 		if(err) var dataString = err;
 		else var dataString = data.toString();
-		dataString += `${ i++ / 2 } - ${ req.ip }<br/>`;
+		dataString += `${ i } - ${ req.ip }<br/>`;
 		dataString += '\n';
 		fs.writeFile('./mydata.txt', dataString, ()=>{});
 	
@@ -28,10 +28,10 @@ app.get("/", (req, res) => {
 		</head>
 		<body>
 			<div class="container mt-3 p-5 bg-primary text-white text-center">
-				<h1>This page was open ${ i++ } times.</h1>
+				<h1>This page was open ${ i } times.</h1>
 				<h4>Up-time is ${ timeMin } minutes.</h4>
 				<p class="bg-info mt-3 p-3 ">String data:<br/> ${ dataString }</p>
-				<a href="reset"> RESET UP-TIME </a>
+				<a href="reset"> RESET UP-TIME... </a>
 			</div>
 		  </body>
 		</html>`
