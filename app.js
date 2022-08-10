@@ -3,7 +3,7 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
-var i = 2;
+var i = 0;
 var timeMin = 0;
 
 app.use(express.static(__dirname + '/public'));
@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 				<h1>This page was open ${ i } times.</h1>
 				<h4>Up-time is ${ timeMin } seconds.</h4>
 				<p class="bg-info mt-3 p-3 ">String data:<br/> ${ dataString }</p>
-				<a href="reset"> RESET UP-TIME...... </a>
+				<a href="reset"> RESET UP-TIME </a>
 			</div>
 		  </body>
 		</html>`
