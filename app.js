@@ -38,8 +38,9 @@ app.get("/", (req, res) => {
 		  </body>
 		</html>`
 		
-		i++;
+		
 		);
+		i++;
 	});
 });
 
