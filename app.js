@@ -33,14 +33,18 @@ app.get("/", (req, res) => {
 				<h1>This page was open ${ i } times.</h1>
 				<h4>Up-time is ${ timeMin } minutes.</h4>
 				<p class="bg-info mt-3 p-3 ">String data:<br/> ${ dataString }</p>
-				<a href="reset"> RESET UP-TIME... </a>
+				<a href="reset"> RESET UP-TIME...... </a>
 			</div>
 		  </body>
 		</html>`
+		
+		i++;
 		);
 	});
 });
 
 app.listen(process.env.PORT || 3000);
+
+var si = setInterval(() => console.log(timeMin++), 1000);
 
 
