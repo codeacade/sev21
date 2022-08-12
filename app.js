@@ -12,13 +12,12 @@ app.use(express.static(__dirname + '/public'));
 
 app.get("/", (req, res) => {
 	
-	//var ip_info = get_ip(req); // to get real IP address
+	var ip_info = get_ip(req); // to get real IP address
 	
 	fs.readFile('./mydata.txt', (err, data) => {
 		if(err) var dataString = err;
 		else var dataString = data.toString();
-		// dataString += `${ i } - ${ req.socket.remoteAddress } - ${ ip_info.clientIp }<br/>`;
-		dataString += `${ i } - ${ req.socket.remoteAddress }<br/>`;
+		dataString += `${ i } - ${ req.socket.remoteAddress } - ${ ip_info.clientIp }<br/>`;
 		dataString += '\n';
 		fs.writeFile('./mydata.txt', dataString, ()=>{});
 	
@@ -52,5 +51,8 @@ app.get("/", (req, res) => {
 app.listen(process.env.PORT || 3000);
 
 var si = setInterval(() => console.log(timeMin++), 1000);
+
+
+
 
 
