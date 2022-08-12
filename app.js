@@ -3,6 +3,8 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const get_ip = require('ipware')().get_ip  // to get real IP address
+
 var i = 0;
 var timeMin = 0;
 
@@ -10,10 +12,12 @@ app.use(express.static(__dirname + '/public'));
 
 app.get("/", (req, res) => {
 	
+	var ip_info = get_ip(req); // to get real IP address
+	
 	fs.readFile('./mydata.txt', (err, data) => {
 		if(err) var dataString = err;
 		else var dataString = data.toString();
-		dataString += `${ i } - ${ req.ip } - ${ req.socket.remoteAddress }<br/>`;
+		dataString += `${ i } - ${ req.socket.remoteAddress } - ${ ip_info.clientIp }<br/>`;
 		dataString += '\n';
 		fs.writeFile('./mydata.txt', dataString, ()=>{});
 	
