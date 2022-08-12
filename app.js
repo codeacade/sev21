@@ -3,7 +3,7 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
-const get_ip = require('ipware')().get_ip  // to get real IP address
+var get_ip = require('ipware')().get_ip  // to get real IP address
 
 var i = 0;
 var timeMin = 0;
