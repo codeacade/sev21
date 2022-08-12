@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.get("/", (req, res) => {
 	
-	var ip_info = get_ip(req); // to get real IP address
+	//var ip_info = get_ip(req); // to get real IP address
 	
 	fs.readFile('./mydata.txt', (err, data) => {
 		if(err) var dataString = err;
