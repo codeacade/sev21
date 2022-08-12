@@ -17,7 +17,8 @@ app.get("/", (req, res) => {
 	fs.readFile('./mydata.txt', (err, data) => {
 		if(err) var dataString = err;
 		else var dataString = data.toString();
-		dataString += `${ i } - ${ req.socket.remoteAddress } - ${ ip_info.clientIp }<br/>`;
+		// dataString += `${ i } - ${ req.socket.remoteAddress } - ${ ip_info.clientIp }<br/>`;
+		dataString += `${ i } - ${ req.socket.remoteAddress }<br/>`;
 		dataString += '\n';
 		fs.writeFile('./mydata.txt', dataString, ()=>{});
 	
