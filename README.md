@@ -1,4 +1,7 @@
 # sev21
+  Show branch name:  
+    `>git branch --show-current`
+  
   Change branch name:  
     `>git branch -m master main`
   
